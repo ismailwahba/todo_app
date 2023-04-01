@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_print, unused_local_variable, prefer_const_declarations, prefer_typing_uninitialized_variables, avoid_returning_null_for_void, unused_import, body_might_complete_normally_nullable, non_constant_identifier_names, recursive_getters, depend_on_referenced_packages
+// ignore_for_file: avoid_print, unused_local_variable, prefer_const_declarations, prefer_typing_uninitialized_variables, avoid_returning_null_for_void, unused_import, body_might_complete_normally_nullable, non_constant_identifier_names, recursive_getters, depend_on_referenced_packages, implementation_imports
 
 // import 'package:app_notes/modules/newtasks/newtasks.dart';
 import 'package:flutter/src/widgets/editable_text.dart';
@@ -112,6 +112,7 @@ class Sqldb {
   deleteData(String sql) async {
     Database? Mydb = await db;
     int response = await Mydb!.rawDelete(sql);
+    print("deletedt");
     return response;
   }
 

@@ -38,6 +38,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   sqflite: ^2.2.6
   intl: ^0.18.0
+  flutter_screenutil: ^5.7.0
+  bloc: ^8.1.1
+  flutter_bloc: ^8.1.2
+  conditional_builder_null_safety: ^0.0.6
+
 
 dev_dependencies:
   flutter_test:

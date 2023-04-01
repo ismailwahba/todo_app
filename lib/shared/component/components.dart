@@ -7,9 +7,8 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_app/shared/constans/constans.dart';
-// import 'package:notes_application/models/note_model.dart';
-// import 'package:todo_app/shared/component/constans.dart';
 
 Widget defaultFormField({
   IconData prefixicon = Icons.title,
@@ -22,10 +21,10 @@ Widget defaultFormField({
       keyboardType: TextInputType.text,
       controller: controller,
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.symmetric(vertical: 25),
+        contentPadding: EdgeInsets.symmetric(vertical: 25.h),
         label: Text(label),
         labelStyle: TextStyle(
-          fontSize: 18,
+          fontSize: 18.sp,
           color: Colors.grey,
         ),
         prefixIcon: Icon(prefixicon),
@@ -40,35 +39,36 @@ Widget defaultFormField({
       onTap: ontap,
     );
 
-Widget buildTaskItem(Map model) => Row(
-      // mainAxisSize: MainAxisSize.min,
-
-      // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
-      children: [
-        CircleAvatar(
-          radius: 40.0,
-          child: Text("${model['time']}"),
-        ),
-        SizedBox(
-          width: 10,
-        ),
-        Expanded(
-          child: Column(
-            // mainAxisSize: MainAxisSize.min,
-            // crossAxisAlignment: CrossAxisAlignment.center,
-
-            children: [
-              Text(
-                "${model['title']}",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),
-              ),
-              Text(
-                "${model['date']}",
-                style: TextStyle(color: Colors.grey),
-              )
-            ],
+Widget buildTaskItem(Map model) => Padding(
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+      child: Row(
+        children: [
+          CircleAvatar(
+            radius: 40.0.r,
+            child: Text("${model['time']}"),
           ),
-        )
-      ],
+          SizedBox(
+            width: 10.w,
+          ),
+          Expanded(
+            child: Column(
+              // mainAxisSize: MainAxisSize.min,
+
+              crossAxisAlignment: CrossAxisAlignment.start,
+
+              children: [
+                Text(
+                  "${model['title']}",
+                  style:
+                      TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0.sp),
+                ),
+                Text(
+                  "${model['date']}",
+                  style: TextStyle(color: Colors.grey),
+                )
+              ],
+            ),
+          )
+        ],
+      ),
     );
